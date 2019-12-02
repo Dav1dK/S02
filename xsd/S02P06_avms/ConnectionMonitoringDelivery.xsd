@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:appinfo>ITxPT S02P06 AVMS service - Connection Monitoring operation XML Schema Definition</xs:appinfo>
+    <xs:documentation>ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - XML Schema with explicit functional services</xs:documentation>
+  </xs:annotation>
+  <xs:element name="ConnectionMonitoringDelivery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" minOccurs="0" ref="MonitoredConnection"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" ref="MonitoredConnectionCancellation"/>
+        <xs:element minOccurs="0" ref="Extensions"/>
+      </xs:sequence>
+      <xs:attribute name="version" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MonitoredConnection">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="RecordedAtTime"/>
+        <xs:element ref="ConnectionRef"/>
+        <xs:element minOccurs="0" ref="CallRef"/>
+        <xs:element minOccurs="0" ref="JourneyPatternRef"/>
+        <xs:element ref="VehicleJourneyRef"/>
+        <xs:element minOccurs="0" ref="VisitNumber"/>
+        <xs:element minOccurs="0" ref="Order"/>
+        <xs:element minOccurs="0" ref="ExpectedDepartureTime"/>
+        <xs:element minOccurs="0" ref="ProtectionState"/>
+        <xs:element minOccurs="0" ref="TransferTime"/>
+        <xs:element minOccurs="0" ref="ConnectedVehicleCallRef"/>
+        <xs:element minOccurs="0" ref="ConnectedVehicleJourneyRef"/>
+        <xs:element minOccurs="0" ref="ConnectedVehicleExpectedDepartureTime"/>
+        <xs:element maxOccurs="unbounded" ref="ConnectedVehicleLineInformation"/>
+        <xs:element maxOccurs="unbounded" ref="ConnectedVehicleDestinationInformation"/>
+        <xs:element minOccurs="0" ref="ConnectedVehicleTransportMode"/>
+        <xs:element minOccurs="0" ref="Extensions"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConnectedVehicleLineInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="LineRef"/>
+        <xs:element minOccurs="0" ref="LineName"/>
+        <xs:element minOccurs="0" ref="LineShortName"/>
+        <xs:element minOccurs="0" ref="LineNumber"/>
+        <xs:element minOccurs="0" ref="LineTTSName"/>
+        <xs:element minOccurs="0" ref="Direction"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConnectedVehicleDestinationInformation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="DestinationRef"/>
+        <xs:element minOccurs="0" ref="DestinationName"/>
+        <xs:element minOccurs="0" ref="DestinationShortName"/>
+        <xs:element minOccurs="0" ref="DestinationTTSName"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MonitoredConnectionCancellation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="RecordedAtTime"/>
+        <xs:element ref="ConnectionRef"/>
+        <xs:element ref="VehicleJourneyRef"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecordedAtTime" type="xs:dateTime"/>
+  <xs:element name="ConnectionRef" type="xs:string"/>
+  <xs:element name="CallRef" type="xs:string"/>
+  <xs:element name="JourneyPatternRef" type="xs:string"/>
+  <xs:element name="VehicleJourneyRef" type="xs:string"/>
+  <xs:element name="VisitNumber" type="xs:positiveInteger"/>
+  <xs:element name="Order" type="xs:positiveInteger"/>
+  <xs:element name="ExpectedDepartureTime" type="xs:dateTime"/>
+  <xs:element name="ProtectionState">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Protected"/>
+        <xs:enumeration value="Cancelled"/>
+        <xs:enumeration value="Not Protected"/>
+        <xs:enumeration value="Topology"/>
+        <xs:enumeration value="Unknown"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="TransferTime" type="xs:time"/>
+  <xs:element name="ConnectedVehicleCallRef" type="xs:string"/>
+  <xs:element name="ConnectedVehicleJourneyRef" type="xs:string"/>
+  <xs:element name="ConnectedVehicleExpectedDepartureTime" type="xs:dateTime"/>
+  <xs:element name="ConnectedVehicleTransportMode" type="xs:string"/>
+  <xs:element name="LineRef" type="xs:string"/>
+  <xs:element name="LineName" type="xs:string"/>
+  <xs:element name="LineShortName" type="xs:string"/>
+  <xs:element name="LineNumber" type="xs:positiveInteger"/>
+  <xs:element name="LineTTSName" type="xs:string"/>
+  <xs:element name="Direction" type="xs:string"/>
+  <xs:element name="DestinationRef" type="xs:string"/>
+  <xs:element name="DestinationName" type="xs:string"/>
+  <xs:element name="DestinationShortName" type="xs:string"/>
+  <xs:element name="DestinationTTSName" type="xs:string"/>
+  <xs:element name="Extensions" type="xs:anyType"/>
+</xs:schema>
