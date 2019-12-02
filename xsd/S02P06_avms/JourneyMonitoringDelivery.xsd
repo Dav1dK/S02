@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo>ITxPT S02P06 AVMS service - Journey Monitoring XML Schema Definition</xs:appinfo>
+    <xs:documentation>ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - XML Schema with explicit functional services</xs:documentation>
+  </xs:annotation>
+  <xs:element name="JourneyMonitoringDelivery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="MonitoredJourney"/>
+        <xs:element minOccurs="0" ref="MonitoredJourneyCancellation"/>
+        <xs:element minOccurs="0" ref="Extensions"/>
+      </xs:sequence>
+      <xs:attribute name="version" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MonitoredJourney">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="RecordedAtTime"/>
+        <xs:element ref="ItemIdentifier"/>
+        <xs:element ref="PatternRef"/>
+        <xs:element ref="JourneyRef"/>
+        <xs:element minOccurs="0" ref="VehicleJourneyRef"/>
+        <xs:element minOccurs="0" ref="JourneyNote"/>
+        <xs:element minOccurs="0" ref="HeadwayService"/>
+        <xs:element ref="OriginPlannedDepartureTime"/>
+        <xs:element ref="DestinationPlannedArrivalTime"/>
+        <xs:element minOccurs="0" ref="InCongestion"/>
+        <xs:element minOccurs="0" ref="InPanic"/>
+        <xs:element minOccurs="0" ref="ProgressRate"/>
+        <xs:element minOccurs="0" ref="Occupancy"/>
+        <xs:element ref="Delay"/>
+        <xs:element minOccurs="0" ref="ProgressStatus"/>
+        <xs:element minOccurs="0" ref="ProductCategoryRef"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="ServiceFeatureRef"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="VehicleFeatureRef"/>
+        <xs:element minOccurs="0" ref="PreviousCalls"/>
+        <xs:element ref="MonitoredCall"/>
+        <xs:element minOccurs="0" ref="OnwardCalls"/>
+        <xs:element minOccurs="0" ref="Extensions"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MonitoredJourneyCancellation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="RecordedAtTime"/>
+        <xs:element minOccurs="0" ref="ItemIdentifier"/>
+        <xs:element minOccurs="0" ref="PatternRef"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Reason"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreviousCalls">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="PreviousCall"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreviousCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="StopPointRef"/>
+        <xs:element minOccurs="0" ref="VisitNumber"/>
+        <xs:element ref="Order"/>
+        <xs:element ref="ActualArrivalTime"/>
+        <xs:element ref="ActualDepartureTime"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MonitoredCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="StopPointRef"/>
+        <xs:element minOccurs="0" ref="VisitNumber"/>
+        <xs:element ref="Order"/>
+        <xs:element ref="VehicleAtStop"/>
+        <xs:element ref="PlannedArrivalTime"/>
+        <xs:element ref="ExpectedArrivalTime"/>
+        <xs:element minOccurs="0" ref="ActualArrivalTime"/>
+        <xs:element ref="PlannedDepartureTime"/>
+        <xs:element ref="ExpectedDepartureTime"/>
+        <xs:element minOccurs="0" ref="ActualDepartureTime"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnwardCalls">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="OnwardCall"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OnwardCall">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="StopPointRef"/>
+        <xs:element minOccurs="0" ref="VisitNumber"/>
+        <xs:element ref="Order"/>
+        <xs:element ref="PlannedArrivalTime"/>
+        <xs:element ref="ExpectedArrivalTime"/>
+        <xs:element ref="PlannedDepartureTime"/>
+        <xs:element ref="ExpectedDepartureTime"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecordedAtTime" type="xs:dateTime"/>
+  <xs:element name="ItemIdentifier" type="xs:string"/>
+  <xs:element name="PatternRef" type="xs:string"/>
+  <xs:element name="JourneyRef" type="xs:string"/>
+  <xs:element name="JourneyNote" type="xs:string"/>
+  <xs:element name="HeadwayService" type="xs:boolean"/>
+  <xs:element name="OriginPlannedDepartureTime" type="xs:dateTime"/>
+  <xs:element name="DestinationPlannedArrivalTime" type="xs:dateTime"/>
+  <xs:element name="InCongestion" type="xs:boolean"/>
+  <xs:element name="InPanic" type="xs:boolean"/>
+  <xs:element name="ProgressRate">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="noProgress"/>
+        <xs:enumeration value="slowProgress"/>
+        <xs:enumeration value="normalProgress"/>
+        <xs:enumeration value="fastProgress"/>
+        <xs:enumeration value="Unknown"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Occupancy">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="full"/>
+        <xs:enumeration value="seatsAvailable"/>
+        <xs:enumeration value="standingAvailable"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Delay" type="xs:integer"/>
+  <xs:element name="ProgressStatus" type="xs:string"/>
+  <xs:element name="ProductCategoryRef" type="xs:string"/>
+  <xs:element name="ServiceFeatureRef" type="xs:string"/>
+  <xs:element name="VehicleFeatureRef" type="xs:string"/>
+  <xs:element name="Reason" type="xs:string"/>
+  <xs:element name="VehicleJourneyRef" type="xs:string"/>
+  <xs:element name="StopPointRef" type="xs:string"/>
+  <xs:element name="VisitNumber" type="xs:positiveInteger"/>
+  <xs:element name="Order" type="xs:positiveInteger"/>
+  <xs:element name="VehicleAtStop" type="xs:boolean"/>
+  <xs:element name="PlannedArrivalTime" type="xs:dateTime"/>
+  <xs:element name="ExpectedArrivalTime" type="xs:dateTime"/>
+  <xs:element name="PlannedDepartureTime" type="xs:dateTime"/>
+  <xs:element name="ExpectedDepartureTime" type="xs:dateTime"/>
+  <xs:element name="ActualArrivalTime" type="xs:dateTime"/>
+  <xs:element name="ActualDepartureTime" type="xs:dateTime"/>
+  <xs:element name="Extensions" type="xs:anyType"/>
+</xs:schema>
