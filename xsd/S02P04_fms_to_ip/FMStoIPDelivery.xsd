@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:appinfo>ITxPT S02P04 FMStoIP provision service - FMStoIP operation XML Schema Definition</xs:appinfo>
+    <xs:documentation>ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - XML Schema with explicit functional services</xs:documentation>
+  </xs:annotation>
+  <xs:element name="FMStoIPDelivery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="FMStoIP"/>
+        <xs:element minOccurs="0" ref="Extensions"/>
+      </xs:sequence>
+      <xs:attribute name="version" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FMStoIP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Frame"/>
+      </xs:sequence>
+      <xs:attribute name="FMSVersion" type="xs:string" use="required"/>
+      <xs:attribute name="VIN" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Frame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="PGN"/>
+        <xs:element ref="Data"/>
+        <xs:element ref="RelativeTime"/>
+        <xs:element maxOccurs="unbounded" minOccurs="0" ref="SPN"/>
+      </xs:sequence>
+      <xs:attribute ref="Status" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PGN" type="xs:string"/>
+  <xs:element name="Data" type="xs:string"/>
+  <xs:element name="RelativeTime" type="xs:positiveInteger"/>
+  <xs:element name="SPN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="Name"/>
+        <xs:element minOccurs="0" ref="Unit"/>
+        <xs:element minOccurs="0" ref="Value"/>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:positiveInteger"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Name" type="xs:string"/>
+  <xs:element name="Unit" type="xs:string"/>
+  <xs:element name="Value" type="xs:string"/>
+  <xs:attribute name="Status">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="OK"/>
+        <xs:enumeration value="Timeout"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
+  <xs:element name="Extensions" type="xs:anyType"/>
+</xs:schema>
