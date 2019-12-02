@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:annotation>
+      <xs:appinfo>ITxPT S02P01 Module Inventory service - Modules Delivery XML Schema Definition</xs:appinfo>
+      <xs:documentation>ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - XML Schema with explicit functional services</xs:documentation>
+  </xs:annotation>
+  <xs:element name="ModulesDelivery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Module"/>
+        <xs:element minOccurs="0" ref="Extensions"/>
+      </xs:sequence>
+      <xs:attribute name="version" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Module">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Type"/>
+        <xs:element ref="Model"/>
+        <xs:element ref="Manufacturer"/>
+        <xs:element ref="SerialNumber"/>
+        <xs:element ref="SoftwareVersion"/>
+        <xs:element ref="HardwareVersion"/>
+        <xs:element ref="MACAddress"/>
+        <xs:element minOccurs="0" ref="EcoMode"/>
+        <xs:element ref="Status"/>
+        <xs:element minOccurs="0" ref="XStatus"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="StatusList"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="SubModules"/>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="Services"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SubModules">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Type"/>
+        <xs:element ref="Model"/>
+        <xs:element ref="Manufacturer"/>
+        <xs:element ref="SerialNumber"/>
+        <xs:element ref="SoftwareVersion"/>
+        <xs:element ref="HardwareVersion"/>
+        <xs:element ref="Status"/>
+        <xs:element minOccurs="0" ref="XStatus"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Services">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="ServiceName"/>
+        <xs:element ref="ServiceType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+<xs:element name="StatusList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="Item"/>
+      </xs:sequence>
+      <xs:attribute name="page" type="xs:positiveInteger" use="required" />
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="Type" type="xs:string"/>
+  <xs:element name="Model" type="xs:string"/>
+  <xs:element name="Manufacturer" type="xs:string"/>
+  <xs:element name="SerialNumber" type="xs:string"/>
+  <xs:element name="SoftwareVersion" type="xs:string"/>
+  <xs:element name="HardwareVersion" type="xs:string"/>
+  <xs:element name="Status" type="xs:string"/>
+  <xs:element name="XStatus">
+    <xs:complexType>
+      <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="page" type="xs:positiveInteger" use="required" />
+        <xs:attribute name="timestamp" type="xs:dateTime" use="required" />
+      </xs:extension>
+    </xs:simpleContent>
+    </xs:complexType>
+</xs:element>
+<xs:element name="Item">
+    <xs:complexType>
+      <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute name="code" type="xs:positiveInteger"/>
+      </xs:extension>
+    </xs:simpleContent>
+    </xs:complexType>
+</xs:element>
+  <xs:element name="MACAddress" type="xs:string"/>
+  <xs:element name="EcoMode" type="xs:string"/>
+  <xs:element name="Extensions" type="xs:anyType"/>
+<xs:element name="ServiceName">
+<xs:simpleType>
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="inventory"/>
+    <xs:enumeration value="time"/>
+    <xs:enumeration value="gnsslocation"/>
+    <xs:enumeration value="fmstoip"/>
+    <xs:enumeration value="vehicletoip"/>
+    <xs:enumeration value="avms"/>
+    <xs:enumeration value="apc"/>
+    <xs:enumeration value="madt"/>
+    <xs:enumeration value="mqtt-broker"/>
+   </xs:restriction>
+</xs:simpleType>
+</xs:element>
+<xs:element name="ServiceType">
+<xs:simpleType>
+  <xs:restriction base="xs:string">
+    <xs:enumeration value="itxpt_socket"/>
+    <xs:enumeration value="itxpt_http"/>
+    <xs:enumeration value="sntp"/>
+    <xs:enumeration value="itxpt_multicast"/>
+    <xs:enumeration value="mqtt"/>
+   </xs:restriction>
+</xs:simpleType>
+</xs:element>
+</xs:schema>
