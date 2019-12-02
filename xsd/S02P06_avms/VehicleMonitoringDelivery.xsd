@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo>ITxPT S02P06 AVMS service - Vehicle Monitoring operation XML Schema Definition</xs:appinfo>
+    <xs:documentation>ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - XML Schema with explicit functional services</xs:documentation>
+  </xs:annotation>
+  <xs:element name="VehicleMonitoringDelivery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="VehicleActivity"/>
+        <xs:element minOccurs="0" ref="VehicleActivityCancellation"/>
+        <xs:element minOccurs="0" ref="Extensions"/>
+      </xs:sequence>
+      <xs:attribute name="version" use="required" type="xs:string"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleActivity">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="RecordedAtTime"/>
+        <xs:element ref="ItemIdentifier"/>
+        <xs:element ref="JourneyPatternRef"/>
+        <xs:element minOccurs="0" ref="VehicleJourneyRef"/>
+        <xs:element ref="ProgressBetweenStops"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="VehicleActivityNote"/>
+        <xs:element minOccurs="0" ref="Extensions"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="VehicleActivityCancellation">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="RecordedAtTime"/>
+        <xs:element minOccurs="0" ref="ItemIdentifier"/>
+        <xs:element minOccurs="0" ref="PatternRef"/>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Reason"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="RecordedAtTime" type="xs:dateTime"/>
+  <xs:element name="ItemIdentifier" type="xs:string"/>
+  <xs:element name="JourneyPatternRef" type="xs:string"/>
+  <xs:element name="PatternRef" type="xs:string"/>
+  <xs:element name="VehicleJourneyRef" type="xs:string"/>
+  <xs:element name="ProgressBetweenStops">
+    <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="PreviousCallRef"/>
+              <xs:element ref="MonitoredCallRef"/>
+              <xs:element ref="LinkDistance"/>
+              <xs:element ref="Percentage"/>
+            </xs:sequence>
+          </xs:complexType>
+    </xs:element>
+    <xs:element name="PreviousCallRef">
+    <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="StopPointRef"/>
+              <xs:element minOccurs="0" ref="VisitNumber"/>
+              <xs:element ref="Order"/>
+            </xs:sequence>
+          </xs:complexType>
+    </xs:element>
+    <xs:element name="MonitoredCallRef">
+    <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="StopPointRef"/>
+              <xs:element minOccurs="0" ref="VisitNumber"/>
+              <xs:element ref="Order"/>
+              <xs:element ref="VehicleAtStop"/>
+            </xs:sequence>
+          </xs:complexType>
+    </xs:element>
+  <xs:element name="VehicleActivityNote" type="xs:string"/>
+  <xs:element name="Reason" type="xs:string"/>
+  <xs:element name="StopPointRef" type="xs:string"/>
+  <xs:element name="VisitNumber" type="xs:positiveInteger"/>
+  <xs:element name="Order" type="xs:positiveInteger"/>
+  <xs:element name="VehicleAtStop" type="xs:boolean"/>
+  <xs:element name="LinkDistance" type="xs:decimal"/>
+  <xs:element name="Percentage" type="xs:decimal"/>
+  <xs:element name="Extensions" type="xs:anyType"/>
+</xs:schema>
