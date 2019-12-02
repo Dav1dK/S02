@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<AddPGN>
+  <PGN>
+    <PGNId>F004</PGNId>
+    <UpdatePolicy>EverySecond</UpdatePolicy>
+  </PGN>
+  <PGN>
+    <PGNId>FD7D</PGNId>
+    <UpdatePolicy>OnChange</UpdatePolicy>
+  </PGN>
+</AddPGN>
