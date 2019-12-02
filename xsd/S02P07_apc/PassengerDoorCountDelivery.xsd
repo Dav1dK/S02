@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:annotation>
+    <xs:appinfo>ITxPT S02P07 APC service - Passenger Door Count operation XML Schema Definition</xs:appinfo>
+    <xs:documentation>ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - XML Schema with explicit functional services</xs:documentation>
+  </xs:annotation>
+  <xs:element name="PassengerDoorCountDelivery">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="PassengerDoorCount"/>
+      </xs:sequence>
+      <xs:attribute name="version" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PassengerDoorCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="RecordedAtTime"/>
+        <xs:element ref="DoorId"/>
+        <xs:element maxOccurs="unbounded" ref="PassengerCounting"/>
+        <xs:element minOccurs="0" ref="DoorCountQuality"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PassengerCounting">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" ref="ObjectClass"/>
+        <xs:element ref="DoorPassengerIn"/>
+        <xs:element ref="DoorPassengerOut"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RecordedAtTime" type="xs:dateTime"/>
+  
+  <xs:element name="DoorId" type="xs:nonNegativeInteger"/>
+  <xs:element name="ObjectClass">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Adult"/>
+        <xs:enumeration value="Child"/>
+        <xs:enumeration value="Pram"/>
+        <xs:enumeration value="Bike"/>
+        <xs:enumeration value="Wheelchair"/>
+        <xs:enumeration value="Other"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="DoorPassengerIn" type="xs:nonNegativeInteger"/>
+  <xs:element name="DoorPassengerOut" type="xs:nonNegativeInteger"/>
+  <xs:element name="DoorCountQuality">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="Regular"/>
+        <xs:enumeration value="Defect"/>
+        <xs:enumeration value="Other"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+</xs:schema>
