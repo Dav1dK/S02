@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PassengerVehicleCountDelivery version="str1234">
+  <PassengerVehicleCount>
+    <RecordedAtTime>2019-10-24T12:12:12</RecordedAtTime>
+    <StopPointRef>10164</StopPointRef>
+    <VehicleCounting>
+      <ObjectClass>Adult</ObjectClass>
+      <VehiclePassengerIn>9</VehiclePassengerIn>
+      <VehiclePassengerOut>6</VehiclePassengerOut>
+    </VehicleCounting>
+    <VehicleCounting>
+      <ObjectClass>Child</ObjectClass>
+      <VehiclePassengerIn>2</VehiclePassengerIn>
+      <VehiclePassengerOut>1</VehiclePassengerOut>
+    </VehicleCounting>
+    <VehicleCounting>
+      <ObjectClass>Pram</ObjectClass>
+      <VehiclePassengerIn>1</VehiclePassengerIn>
+      <VehiclePassengerOut>1</VehiclePassengerOut>
+    </VehicleCounting>
+    <VehicleCountQuality>Regular</VehicleCountQuality>
+    <VehicleOccupancy>4</VehicleOccupancy>
+    <VehicleOccupancyRatio>10.45</VehicleOccupancyRatio>
+  </PassengerVehicleCount>
+</PassengerVehicleCountDelivery>
