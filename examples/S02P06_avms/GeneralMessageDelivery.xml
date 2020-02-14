@@ -3,7 +3,7 @@
   <InfoMessage>
     <RecordedAtTime>2019-10-24T12:12:12</RecordedAtTime>
     <ItemIdentifier>a1</ItemIdentifier>
-    <InfoMessageIdentifier>b3</InfoMessageIdentifier>
+    <InfoMessageRef>b3</InfoMessageRef>
     <InfoMessageVersion>745</InfoMessageVersion>
     <InfoChannelRef>s23</InfoChannelRef>
     <ValidFromTime>2019-10-24T12:12:12</ValidFromTime>
