@@ -19,7 +19,7 @@
       <xs:sequence>
         <xs:element ref="RecordedAtTime"/>
         <xs:element minOccurs="0" ref="ItemIdentifier"/>
-        <xs:element ref="InfoMessageIdentifier"/>
+        <xs:element ref="InfoMessageRef"/>
         <xs:element minOccurs="0" ref="InfoMessageVersion"/>
         <xs:element minOccurs="0" ref="InfoChannelRef"/>
         <xs:element minOccurs="0" ref="ValidFromTime"/>
@@ -35,7 +35,7 @@
       <xs:sequence>
         <xs:element ref="RecordedAtTime"/>
         <xs:element minOccurs="0" ref="ItemIdentifier"/>
-        <xs:element ref="InfoMessageIdentifier"/>
+        <xs:element ref="InfoMessageRef"/>
         <xs:element minOccurs="0" ref="InfoMessageVersion"/>
         <xs:element minOccurs="0" ref="Extensions"/>
       </xs:sequence>
@@ -71,7 +71,7 @@
   </xs:element>
   <xs:element name="RecordedAtTime" type="xs:dateTime"/>
   <xs:element name="ItemIdentifier" type="xs:string"/>
-  <xs:element name="InfoMessageIdentifier" type="xs:string"/>
+  <xs:element name="InfoMessageRef" type="xs:string"/>
   <xs:element name="InfoMessageVersion" type="xs:positiveInteger"/>
   <xs:element name="InfoChannelRef" type="xs:string"/>
   <xs:element name="ValidFromTime" type="xs:dateTime"/>
