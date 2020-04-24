@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- ITxPT S02P06v2.1.0 AVMS service - Pattern Monitoring operation XML Example -->
 <PatternMonitoringDelivery version="str1234">
   <MonitoredPattern>
     <RecordedAtTime>2019-10-24T12:12:12</RecordedAtTime>
