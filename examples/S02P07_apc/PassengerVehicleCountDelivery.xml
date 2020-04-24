@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- ITxPT S02P07v2.1.0 APC service - Passenger Vehicle Count operation XML Example -->
 <PassengerVehicleCountDelivery version="str1234">
   <PassengerVehicleCount>
     <RecordedAtTime>2019-10-24T12:12:12</RecordedAtTime>
