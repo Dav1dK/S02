@@ -1,0 +1,49 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "object",
+    "title": "ITxPT S02P08v2.1.0 MADT service - MADT GetCharacteristics response JSON Schema Definition",
+    "description": "ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - JSON Schema with explicit functional services",
+    "default": {},
+    "additionalProperties": true,
+    "required": [
+        "retCode",
+        "version",
+        "winWidth",
+        "winHeight",
+        "iconWidth",
+        "iconHeight",
+        "maxTabs"
+    ],
+    "properties": {
+        "retCode": {
+            "$id": "#/properties/retCode",
+            "type": "integer",
+            "enum": [0, 1, 2, 3, 4]
+        },
+        "version": {
+            "$id": "#/properties/version",
+            "type": "string"
+        },
+        "winWidth": {
+            "$id": "#/properties/winWidth",
+            "type": "integer"
+        },
+        "winHeight": {
+            "$id": "#/properties/winHeight",
+            "type": "integer"
+        },
+        "iconWidth": {
+            "$id": "#/properties/iconWidth",
+            "type": "integer"
+        },
+        "iconHeight": {
+            "$id": "#/properties/iconHeight",
+            "type": "integer"
+        },
+        "maxTabs": {
+            "$id": "#/properties/maxTabs",
+            "type": "integer"
+        }
+    }
+}
