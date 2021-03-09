@@ -29,6 +29,7 @@
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="StatusList"/>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="SubModules"/>
         <xs:element minOccurs="1" maxOccurs="unbounded" ref="Services"/>
+        <xs:element minOccurs="0" ref="Extensions"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
