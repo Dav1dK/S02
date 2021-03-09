@@ -9,6 +9,7 @@
       <xs:sequence>
         <xs:element ref="MonitoredPattern"/>
         <xs:element minOccurs="0" ref="MonitoredPatternCancellation"/>
+        <xs:element minOccurs="0" ref="Extensions"/>
       </xs:sequence>
       <xs:attribute name="version" use="required" type="xs:string"/>
     </xs:complexType>
@@ -66,10 +67,11 @@
           </xs:complexType>
   </xs:element>
   <xs:element name="StopPointRef" type="xs:string"/>
-    <xs:element name="VisitNumber" type="xs:positiveInteger"/>
-    <xs:element name="Order" type="xs:positiveInteger"/>
-    <xs:element name="VehicleAtStop" type="xs:boolean"/>
-    <xs:element name="Reason" type="xs:string"/>
-    <xs:element name="PlannedPatternRef" type="xs:string"/>
-    <xs:element name="MonitoredPatternNote" type="xs:string"/>
+  <xs:element name="VisitNumber" type="xs:positiveInteger"/>
+  <xs:element name="Order" type="xs:positiveInteger"/>
+  <xs:element name="VehicleAtStop" type="xs:boolean"/>
+  <xs:element name="Reason" type="xs:string"/>
+  <xs:element name="PlannedPatternRef" type="xs:string"/>
+  <xs:element name="MonitoredPatternNote" type="xs:string"/>
+  <xs:element name="Extensions" type="xs:anyType"/>
 </xs:schema>
