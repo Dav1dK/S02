@@ -34,7 +34,7 @@
         <xs:element minOccurs="0" ref="OriginShortName"/>
         <xs:element minOccurs="0" ref="OriginLongName"/>
         <xs:element minOccurs="0" ref="OriginTtsName"/>
-        <xs:element ref="Via" minOccurs="0"/>
+        <xs:element  minOccurs="0" maxOccurs="unbounded" ref="Via"/>
         <xs:element minOccurs="0" ref="DestinationPlaceRef"/>
         <xs:element ref="DestinationName"/>
         <xs:element minOccurs="0" ref="DestinationShortName"/>
