@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
   <xs:annotation>
-      <xs:appinfo>ITxPT S02P05v2.1.0 VEHICLEtoIP service - VEHICLEtoIP Delivery XML Schema Definition</xs:appinfo>
-      <xs:documentation>ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - XML Schema with explicit functional services</xs:documentation>
+    <xs:appinfo>ITxPT S02P05v2.1.1 VEHICLEtoIP service - VEHICLEtoIP Delivery XML Schema Definition</xs:appinfo>
+    <xs:documentation>ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - XML Schema with explicit functional services</xs:documentation>
   </xs:annotation>
   <xs:element name="VEHICLEtoIPDelivery">
     <xs:complexType>
@@ -75,7 +75,7 @@
     </xs:simpleType>
   </xs:element>
   <xs:element name="ActiveCabin">
-  <xs:simpleType>
+    <xs:simpleType>
       <xs:restriction base="xs:string">
         <xs:enumeration value="NoCab"/>
         <xs:enumeration value="Cab1"/>
@@ -86,7 +86,7 @@
   <xs:element name="PresenceHV" type="xs:boolean"/>
   <xs:element name="StopRequest" type="xs:boolean"/>
   <xs:element name="VehicleType">
-  <xs:simpleType>
+    <xs:simpleType>
       <xs:restriction base="xs:string">
         <xs:enumeration value="Bus"/>
         <xs:enumeration value="Tram"/>

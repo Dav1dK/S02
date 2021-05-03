@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
-    <xs:appinfo>ITxPT S02P04v2.1.0 FMStoIP provision service - FMStoIP operation XML Schema Definition</xs:appinfo>
+    <xs:appinfo>ITxPT S02P04v2.1.1 FMStoIP provision service - FMStoIP operation XML Schema Definition</xs:appinfo>
     <xs:documentation>ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - XML Schema with explicit functional services</xs:documentation>
   </xs:annotation>
   <xs:element name="FMStoIPDelivery">
@@ -49,13 +49,13 @@
   <xs:element name="Name" type="xs:string"/>
   <xs:element name="Unit" type="xs:string"/>
   <xs:element name="Value" type="xs:string"/>
-  <xs:attribute name="Status">
-    <xs:simpleType>
-      <xs:restriction base="xs:string">
-        <xs:enumeration value="OK"/>
-        <xs:enumeration value="Timeout"/>
-      </xs:restriction>
-    </xs:simpleType>
-  </xs:attribute>
+    <xs:attribute name="Status">
+      <xs:simpleType>
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="OK"/>
+          <xs:enumeration value="Timeout"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
   <xs:element name="Extensions" type="xs:anyType"/>
 </xs:schema>

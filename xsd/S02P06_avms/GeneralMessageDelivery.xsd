@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
   <xs:annotation>
-    <xs:appinfo>ITxPT S02P06v2.1.0 AVMS service - General Message operation XML Schema Definition</xs:appinfo>
+    <xs:appinfo>ITxPT S02P06v2.1.1 AVMS service - General Message operation XML Schema Definition</xs:appinfo>
     <xs:documentation>ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - XML Schema with explicit functional services</xs:documentation>
   </xs:annotation>
   <xs:element name="GeneralMessageDelivery">
@@ -41,8 +41,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  
-<xs:element name="NetworkArea">
+  <xs:element name="NetworkArea">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" maxOccurs="unbounded" ref="StopPointRef"/>
@@ -50,7 +49,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-<xs:element name="LineArea">
+  <xs:element name="LineArea">
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="LineRef"/>
@@ -59,7 +58,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-<xs:element name="Content">
+  <xs:element name="Content">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" ref="ShortMessage"/>
