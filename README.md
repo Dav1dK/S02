@@ -1,25 +1,35 @@
-# NOTE: THE SET OF FILES FOR 2.1.1 IS CURRENTLY BEING UPDATED #
+# S02 - Onboard Architecture specifications #
 
-ITxPT(R)2021 specifications
-# S02 - Onboard Architecture specifications
-Schema files and examples are currently available for each of the following services according to ITxPT S02v2.1.0 specification (available in https://wiki.itxpt.org/index.php?title=ITxPT_Technical_Specifications):
+This it the github repository for the ITxPT S02 specifications. It contains additional files that complement the specifications. 
 
-## XSD & XML
+The specifications themselves are found at https://wiki.itxpt.org/index.php?title=ITxPT_Technical_Specifications
+
+The **branch name** corresponds to the **specification revision** these files are valid for.
+
+## Know Issues List ##
+
+Known Issues for the S02 Specifications are documented in [KnownIssues.md](KnownIssues.md)
+
+## Client Development Guide ##
+
+Find implementation advice in [ClientDevelopmentGuide.md](Guidelines/ClientDevelopmentGuide.md)
+
+## Schemas ## 
+
+Schema files and examples are currently available for each of the following services:
 - ModuleInventory
 - GNSSLocation
 - FMStoIP
 - VEHICLEtoIP
 - AVMS
 - APC
-
-## JSON
 - MADT
 
-## What does it serve?
-XML Schema Definition (XSD) or JSON Schema are currently the de facto standard for describing XML/JSON document. Schema should be used as a software development tool in the implementation of ITxPT IP service using XML or JSON payloads. It can validate that an data structure is well formed and compliant with the structure defined in the related ITxPT specification. In some cases, Schema can be used to automate/simplify the generation of payload structure at coding level.
+### Purpose of schema files ###
+XML Schema Definition (XSD) or JSON Schema are the standard for describing XML and JSON structured data. Schemas should be used as a software development tool in the implementation of ITxPT IP service using XML or JSON payloads. It can validate that a data structure is well formed and compliant with the structure defined in the related ITxPT specification. In some cases, Schema can be used to automate/simplify the generation of payload structure at coding level.
 
-## Report an issue/question related to these files
+### Report an issue/question related to the schema files ###
 To report any issue found during implementation or question you have regarding the content of this repository, please use the native GitHub Issue system. 
 
-## Report an issue/question related to an ITxPT specification
+## Report an issue/question related to an ITxPT specification ###
 To report any issue found during implementation or question you have regarding the content of the specification, please use the dedicated form: https://forms.gle/tMRgxTXSF1Mahpq27
