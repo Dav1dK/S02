@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:annotation>
-    <xs:appinfo>ITxPT S02P07v2.1.1 APC service - Passenger Door Count operation XML Schema Definition</xs:appinfo>
+    <xs:appinfo>ITxPT S02P07 APC service - Passenger Door Count operation XML Schema Definition</xs:appinfo>
     <xs:documentation>ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - XML Schema with explicit functional services</xs:documentation>
   </xs:annotation>
   <xs:element name="PassengerDoorCountDelivery">

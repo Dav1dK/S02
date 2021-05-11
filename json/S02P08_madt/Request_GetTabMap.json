@@ -2,7 +2,7 @@
     "$schema": "http://json-schema.org/draft-07/schema",
     "$id": "http://example.com/example.json",
     "type": "object",
-    "title": "ITxPT S02P08v2.1.1 MADT service - MADT GetTabMap request JSON Schema Definition",
+    "title": "ITxPT S02P08 MADT service - MADT GetTabMap request JSON Schema Definition",
     "description": "ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - JSON Schema with explicit functional services",
     "default": {},
     "additionalProperties": true,
