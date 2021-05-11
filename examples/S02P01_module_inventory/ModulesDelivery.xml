@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- ITxPT S02P01v2.1.0 Module Inventory service - Modules Delivery XML Example -->
-<ModulesDelivery version="str1234">
+<ModulesDelivery version="2.1.1">
   <Module>
     <Type>Communication Gateway</Type>
     <Model>Model26</Model>
@@ -57,5 +57,5 @@
       <ServiceType>itxpt_multicast</ServiceType>
     </Services>
   </Module>
-  <Extensions />
+  <Extensions/>
 </ModulesDelivery>
