@@ -8,10 +8,9 @@ The specifications have HIGHER priority than this Guide. Both S02P00 and the par
 
 ## Background ## 
 
-ITxPT specifications and labelling aims at ensuring interoperability for the ITxPT services. Labelling is done for services but not for the clients using those services. And while the ITxPT S02 specifications describes the interface that must be implemented by both client and service, there is an emphasis on the service part. 
+ITxPT specifications and labelling aims at ensuring interoperability for the ITxPT services. The ITxPT S02 specifications describes the _interface_ that must be implemented. This means that details that are internal to the client are not part of the specification.  
 
-For ITxPT to provide truly interoperable services, it is important that the clients follow some best practices. This is particularly important as there are no compliance tests for client implementations. 
-This document contains some best practices and advice for writing interoperable client software towards the ITxPT services. The goal is for clients to be (more) compatible with different implementations of a service and with future backwards compatible releases of the specifications. 
+For ITxPT to provide truly interoperable services, it is important that the clients follow some best practices. This document contains some best practices and advice for writing interoperable client software towards the ITxPT services. The goal is for clients to be (more) compatible with different implementations of a service and with future backwards compatible releases of the specifications. 
 
 ## Please report Issues ##
 
@@ -29,10 +28,6 @@ Most of the SRV and TXT record attributes have reasonable example values. And it
 
 ### Check version ###
 The TXT record attribute version lists the compatible specification version(s?). If specification version is not inside the expected range, this should, at minimum, be logged as a warning. 
-
-### Multiple services ###
-TBD – Frankly not sure how to handle this  
-In the cases when more than one service of a type is registered, one registration will necessarily be available before the other one, so just checking if only one service is present is not on its own enough. 
 
 ### Changing values ###
 Both the SRV and TXT records could potentially change during operation. This is probably unusual, so perhaps handling this is not essential. But each client should have a clearly defined and communicated strategy on how to (not) handle changing SRV and TXT records. 
@@ -68,7 +63,8 @@ The GNSSLocation, FMStoIP, and VEHICLEtoIP service uses Multicast to distribute 
 ### Check origin ip-address of data ###
 While this normally should not happen, it is possible to have multiple instances of the same multicast service on the local network. If this happens the client will be subscribed to data from both services which could be very confusing and cause unexpected behavior/data. 
 
-The client should check the origin ip-address of received multicast data and see that this address matches the (DNS-SD) service that the client wanted to use. As a minimum the client should check if data is received from multiple addresses (modules) and log that as an error.  
+The client should check the origin ip-address of received multicast data and see that this address matches the (DNS-SD) service that the client wanted to use. As a minimum the client should check if data is received from multiple addresses (modules) and log that as an error. 
+
 
 ## Other topic ## 
 
