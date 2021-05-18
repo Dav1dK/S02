@@ -5,6 +5,7 @@
     <xs:documentation>ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - XML Schema with explicit functional services</xs:documentation>
   </xs:annotation>
   <xs:element name="FMStoIPDelivery">
+    <xs:element ref="RelativeTime"/>
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="FMStoIP"/>
@@ -26,6 +27,7 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element ref="PGN"/>
+        <xs:element ref="SA"/>
         <xs:element ref="Data"/>
         <xs:element ref="RelativeTime"/>
         <xs:element maxOccurs="unbounded" minOccurs="0" ref="SPN"/>
@@ -34,28 +36,35 @@
     </xs:complexType>
   </xs:element>
   <xs:element name="PGN" type="xs:string"/>
+  <xs:element name="SA" type="xs:string"/>
   <xs:element name="Data" type="xs:string"/>
-  <xs:element name="RelativeTime" type="xs:positiveInteger"/>
+  <xs:element name="RelativeTime" type="xs:nonNegativeInteger"/>
   <xs:element name="SPN">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" ref="Name"/>
         <xs:element minOccurs="0" ref="Unit"/>
-        <xs:element minOccurs="0" ref="Value"/>
+        <xs:element ref="Value"/>
+        <xs:element minOccurs="0" ref="RawValue"/>
       </xs:sequence>
-      <xs:attribute name="id" type="xs:positiveInteger"/>
+      <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
     </xs:complexType>
   </xs:element>
   <xs:element name="Name" type="xs:string"/>
   <xs:element name="Unit" type="xs:string"/>
-  <xs:element name="Value" type="xs:string"/>
-    <xs:attribute name="Status">
-      <xs:simpleType>
-        <xs:restriction base="xs:string">
-          <xs:enumeration value="OK"/>
-          <xs:enumeration value="Timeout"/>
-        </xs:restriction>
-      </xs:simpleType>
-    </xs:attribute>
+  <xs:element name="Value" type="xs:string">
+    <xs:attribute name="valid" type="xs:boolean">  
+  </xs:element>
+  <xs:element name="RawValue" type="xs:string"/>
+  <xs:attribute name="Status">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="NotSeen"/>
+        <xs:enumeration value="Seen"/>
+        <xs:enumeration value="OK"/>
+        <xs:enumeration value="Timeout"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:attribute>
   <xs:element name="Extensions" type="xs:anyType"/>
 </xs:schema>
