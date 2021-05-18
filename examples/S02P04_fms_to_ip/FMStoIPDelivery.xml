@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- ITxPT S02P04v2.1.0 FMStoIP provision service - FMStoIP operation XML Example -->
-<FMStoIPDelivery version="str1234">
-  <FMStoIP FMSVersion="04" VIN="VINITXPTSPECV2100">
+<!-- ITxPT S02P04 FMStoIP provision service - FMStoIP operation XML Example -->
+<FMStoIPDelivery version="2.1.1">
+  <FMStoIP FMSVersion="0404" VIN="VINITXPTSPECV2100">
     <Frame Status="OK">
       <PGN>FEF1</PGN>
       <Data>F35237C403501FFF</Data>

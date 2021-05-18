@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- ITxPT S02P03v2.1.0 GNSSLocation service - GNSSLocation Delivery XML Example -->
+<!-- ITxPT S02P03 GNSSLocation service - GNSSLocation Delivery XML Example -->
 <GNSSLocationDelivery version="2.1.1">
   <GNSSLocation>
     <Data>$GPRMC,080530.526,A,4852.655,N,00220.337,E,,,241019,000.0,W*70</Data>  

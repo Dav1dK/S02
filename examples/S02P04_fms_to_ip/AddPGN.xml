@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- ITxPT S02P04v2.1.0 FMStoIP configuration service - Add PGN operation XML Example -->
+<!-- ITxPT S02P04 FMStoIP configuration service - Add PGN operation XML Example -->
 <AddPGN>
   <PGN>
     <PGNId>F004</PGNId>
