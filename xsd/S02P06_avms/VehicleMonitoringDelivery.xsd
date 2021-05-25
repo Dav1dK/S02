@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
   <xs:annotation>
-    <xs:appinfo>ITxPT S02P06v2.1.0 AVMS service - Vehicle Monitoring operation XML Schema Definition</xs:appinfo>
+    <xs:appinfo>ITxPT S02P06 AVMS service - Vehicle Monitoring operation XML Schema Definition</xs:appinfo>
     <xs:documentation>ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - XML Schema with explicit functional services</xs:documentation>
   </xs:annotation>
   <xs:element name="VehicleMonitoringDelivery">
@@ -37,7 +37,6 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-
   <xs:element name="RecordedAtTime" type="xs:dateTime"/>
   <xs:element name="ItemIdentifier" type="xs:string"/>
   <xs:element name="JourneyPatternRef" type="xs:string"/>
@@ -45,33 +44,33 @@
   <xs:element name="VehicleJourneyRef" type="xs:string"/>
   <xs:element name="ProgressBetweenStops">
     <xs:complexType>
-            <xs:sequence>
-              <xs:element ref="PreviousCallRef"/>
-              <xs:element ref="MonitoredCallRef"/>
-              <xs:element ref="LinkDistance"/>
-              <xs:element ref="Percentage"/>
-            </xs:sequence>
-          </xs:complexType>
-    </xs:element>
-    <xs:element name="PreviousCallRef">
+      <xs:sequence>
+        <xs:element ref="PreviousCallRef"/>
+        <xs:element ref="MonitoredCallRef"/>
+        <xs:element ref="LinkDistance"/>
+        <xs:element ref="Percentage"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PreviousCallRef">
     <xs:complexType>
-            <xs:sequence>
-              <xs:element ref="StopPointRef"/>
-              <xs:element minOccurs="0" ref="VisitNumber"/>
-              <xs:element ref="Order"/>
-            </xs:sequence>
-          </xs:complexType>
-    </xs:element>
-    <xs:element name="MonitoredCallRef">
+      <xs:sequence>
+        <xs:element ref="StopPointRef"/>
+        <xs:element minOccurs="0" ref="VisitNumber"/>
+        <xs:element ref="Order"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="MonitoredCallRef">
     <xs:complexType>
-            <xs:sequence>
-              <xs:element ref="StopPointRef"/>
-              <xs:element minOccurs="0" ref="VisitNumber"/>
-              <xs:element ref="Order"/>
-              <xs:element ref="VehicleAtStop"/>
-            </xs:sequence>
-          </xs:complexType>
-    </xs:element>
+      <xs:sequence>
+        <xs:element ref="StopPointRef"/>
+        <xs:element minOccurs="0" ref="VisitNumber"/>
+        <xs:element ref="Order"/>
+        <xs:element ref="VehicleAtStop"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
   <xs:element name="VehicleActivityNote" type="xs:string"/>
   <xs:element name="Reason" type="xs:string"/>
   <xs:element name="StopPointRef" type="xs:string"/>

@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-	<xs:annotation>
-		<xs:appinfo>ITxPT S02P04v2.1.0 FMStoIP configuration service - Add PGN operation XML Schema Definition</xs:appinfo>
-		<xs:documentation>ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - XML Schema with explicit functional services</xs:documentation>
-	</xs:annotation>
-	<xs:element name="AddPGN">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element maxOccurs="unbounded" ref="PGN"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="PGN">
-		<xs:complexType>
-			<xs:sequence>
-				<xs:element ref="PGNId"/>
-				<xs:element ref="UpdatePolicy"/>
-			</xs:sequence>
-		</xs:complexType>
-	</xs:element>
-	<xs:element name="PGNId" type="xs:string"/>
-	<xs:element name="UpdatePolicy" type="xs:string"/>
+  <xs:annotation>
+    <xs:appinfo>ITxPT S02P04 FMStoIP configuration service - Add PGN operation XML Schema Definition</xs:appinfo>
+    <xs:documentation>ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - XML Schema with explicit functional services</xs:documentation>
+  </xs:annotation>
+  <xs:element name="AddPGN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="unbounded" ref="PGN"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PGN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="PGNId"/>
+        <xs:element ref="UpdatePolicy"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="PGNId" type="xs:string"/>
+  <xs:element name="UpdatePolicy">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="EverySecond"/>
+        <xs:enumeration value="OnChange"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
 </xs:schema>
