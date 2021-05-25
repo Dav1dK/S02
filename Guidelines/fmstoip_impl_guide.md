@@ -13,9 +13,18 @@ If you in this guide find things that are incorrect, confusing, or would be more
 
 Applicable for: Client implementations
 
-ToDo: Write something about checking txt-attributes. 
+The FMStoIP service have several txt record attributes that the client application should check. Not all clients needs to check all attributes, but this should be evaluated for each attribute. 
 
-...
+General attributes
+- version: Check that the service have the expected version
+- path: Path must be used to find the location of configuration service
+- operations: If Client uses any optional operations, this should be checked for their presence. 
+
+FMStoIP service specific attributes:
+- cachestrat: Not all services stores/sees unsubscribed data the same way. This could make a difference in some cases. 
+- fmsstdbus: FMS Bus standard. Until release of next FMS standard Should be 4 for all 2.2.0 services, so not the most imporant. 
+- fmsstdtruck: FMS Truck standard. See fmsstdbus.
+- spndecode: If the Client depends on the optional SPN decode feature of the FMStoIP service it should check spndecode. Note that 'none' does not necessarily mean that no SPN are supported, it just means that the next level is not. (If service supported decoding 20 FMS Standard PGNs, it would still be 'none' since it it don't support all which is needed to declare 'fms'.)
 
 ## ClientId ##
 
@@ -24,6 +33,20 @@ Applicable for: Client implementations
 For compatibility reasons, ClientId in addpgn/removepgn requests is optional. But it is strongly recommended that all clients do provide a ClientId to prevent the possibility of conflict with existing or future clients on the same module.
 
 It is up to each client to use something suitably unique. For one client the ClientId should be the same each time it starts. If it isn't, e.g. using PID (Process ID) as ClientId, then if the client (re)starts more often than the FMStoIP service the FMStoIP service list of registrations may grow uncontrollably. 
+
+## Operation addspndecode for SPNs that are being decoded ## 
+
+Applicable for: Client implementations
+
+The 2.2.0 specification makes which SPNs are decoded into the multicast stream a static configuration. It also adds the new operation addspndecode that will add an SPN to the decode list. It is strongly recommended that all Client implementations call addspndecode for all spn, even those that are statically configured. That way over time the need for a particular configuration in the vehicle will be removed. (It also means that network monitoring can resolve what SPNs are being used, which is also nice.)
+
+## Operation addpgn for PGNs in Default Minimum Set ##
+
+Applicable for: Client implementations
+
+For legacy reasons the FMStoIP specification has five PGNs that are sent in the multicast stream, the Default Minimum Set. 
+
+It is strongly recommended that any Client Implementation that is capable of calling addpgn, do that also the for the Default Minimum Set PGNs. 
 
 ## SPN decode configuration example ##
 
@@ -153,7 +176,7 @@ func Send():
   - clear send-buffer
 ```
 
-![Periodic Check PNG](Example_implementation_-_Periodic_Check.png)
+![Periodic Check PNG](../artifacts/Example_implementation_-_Periodic_Check.png)
 
 
 ### Send early ###
@@ -195,7 +218,7 @@ func Send():
   - clear send-buffer
 ```
 
-![Send Early PNG](Example_implementation_-_Send_Early.png)
+![Send Early PNG](../artifacts/Example_implementation_-_Send_Early.png)
 
 # Amount of traffic calculations #
 
