@@ -5,7 +5,11 @@
     <xs:documentation>ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - XML Schema with explicit functional services</xs:documentation>
   </xs:annotation>
   <xs:element name="RegistrationStatus">
-    <xs:element minOccurs="1" maxOccurs="unbounded" ref="Subscriber"/>
+    <xs:complexType>  
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="Subscriber"/>
+      </xs:sequence>  
+    </xs:complexType>      
   </xs:element>
   <xs:element name="Subscriber">
     <xs:complexType>

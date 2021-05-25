@@ -26,12 +26,12 @@
       </SPN>
       <SPN id="598">
         <Name>Clutch Switch</Name>
-        <Unit>pedal released</Unit>
+        <Value>pedal released</Value>
         <RawValue>0</RawValue>
       </SPN>
       <SPN id="976">
         <Name>PTO state</Name>
-        <Unit>not available</Unit>
+        <Value>not available</Value>
         <RawValue>1F</RawValue>
       </SPN>
     </Frame>

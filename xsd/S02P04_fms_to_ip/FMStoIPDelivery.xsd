@@ -5,9 +5,9 @@
     <xs:documentation>ITxPT Service Interface for Real-time Information relating to Public Transport Operations. - XML Schema with explicit functional services</xs:documentation>
   </xs:annotation>
   <xs:element name="FMStoIPDelivery">
-    <xs:element ref="RelativeTime"/>
     <xs:complexType>
       <xs:sequence>
+        <xs:element ref="RelativeTime"/>
         <xs:element ref="FMStoIP"/>
         <xs:element minOccurs="0" ref="Extensions"/>
       </xs:sequence>
@@ -52,8 +52,14 @@
   </xs:element>
   <xs:element name="Name" type="xs:string"/>
   <xs:element name="Unit" type="xs:string"/>
-  <xs:element name="Value" type="xs:string">
-    <xs:attribute name="valid" type="xs:boolean">  
+  <xs:element name="Value">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="valid" type="xs:boolean"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
   </xs:element>
   <xs:element name="RawValue" type="xs:string"/>
   <xs:attribute name="Status">
