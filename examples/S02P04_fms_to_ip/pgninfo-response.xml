@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<PGNDetails xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <PGNId>F004</PGNId>
+  <RepetitionRate>20</RepetitionRate>
+  <SPN id="513">
+    <Name>Actual Engine – Percent Torque</Name>
+    <Unit>%</Unit>
+    <DecodeInPGN>false</DecodeInPGN>
+  </SPN>
+  <SPN id="190">
+    <Name>Engine Speed</Name>
+    <Unit>rpm</Unit>
+    <DecodeInPGN>true</DecodeInPGN>
+  </SPN>
+</PGNDetails>
