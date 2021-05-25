@@ -10,9 +10,11 @@ The **branch name** corresponds to the **specification revision** these files ar
 
 Known Issues for the S02 Specifications are documented in [KnownIssues.md](KnownIssues.md)
 
-## Client Development Guide ##
+## Development Guides ##
 
-Find implementation advice in [ClientDevelopmentGuide.md](Guidelines/ClientDevelopmentGuide.md)
+Find implementation advice for Clients in [ClientDevelopmentGuide.md](Guidelines/ClientDevelopmentGuide.md)
+
+FMStoIP specific implementation advice for both Service and Clients [FMStoIP Implementation Guide](Guidelines/fmstoip_impl_guide.md)
 
 ## Schemas ## 
 
