@@ -9,6 +9,7 @@
 			<xs:sequence>
 				<xs:element maxOccurs="unbounded" ref="PGNId"/>
 			</xs:sequence>
+			<xs:attribute name="ClientId" type="xs:string"/>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="PGNId" type="xs:string"/>
