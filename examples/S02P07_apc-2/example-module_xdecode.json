@@ -1,0 +1,99 @@
+{
+  "$schema": "https://github.com/ITxPT/<something>/module_xdecode-schema.json",
+  "version": "2.2.0",
+  "statusList": { 
+	"page0": [ 
+		{ 
+			"code": "1", 
+			"text": "Generic module status" 
+		}, 
+		{ 
+			"code": "2", 
+			"text": "Consolidated Submodule status" 
+		}, 
+		{ 
+			"code": "3", 
+			"text": "Low uptime" 
+		}, 
+		{ 
+			"code": "4", 
+			"text": "High uptime" 
+		}, 
+		{ 
+			"code": "5", 
+			"text": "Free RAM memory" 
+		}, 
+		{ 
+			"code": "6", 
+			"text": "Free storage memory" 
+		}, 
+		{ 
+			"code": "7", 
+			"text": "root filesystem" 
+		}, 
+		{ 
+			"code": "8", 
+			"text": "application filsystem" 
+		}, 
+		{ 
+			"code": "9", 
+			"text": "filesystem load" 
+		}, 
+		{ 
+			"code": "10", 
+			"text": "Missing file" 
+		}, 
+		{ 
+			"code": "11", 
+			"text": "CPU load" 
+		}, 
+		{ 
+			"code": "12", 
+			"text": "Network load" 
+		}, 
+		{ 
+			"code": "13", 
+			"text": "Tampering" 
+		}, 
+		{ 
+			"code": "14", 
+			"text": "Backoffice connection" 
+		}, 
+		{ 
+			"code": "15", 
+			"text": "WAN connection" 
+		}, 
+		{ 
+			"code": "16", 
+			"text": "Configuration" 
+		}, 
+		{ 
+			"code": "17", 
+			"text": "Running applications" 
+		}, 
+		{ 
+			"code": "18", 
+			"text": "System temperature" 
+		}, 
+		{ 
+			"code": "19", 
+			"text": "Time sync" 
+		}, 
+		{ 
+			"code": "20", 
+			"text": "Power supply" 
+		} 
+	], 
+
+	"page1": [ 
+		{ 
+			"code": "1", 
+			"text": "Display mode status" 
+		}, 
+		{ 
+			"code": "2", 
+			"text": "Backlight status" 
+		} 
+	] 
+  } 
+}
