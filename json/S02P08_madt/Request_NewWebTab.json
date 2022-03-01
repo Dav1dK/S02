@@ -26,7 +26,7 @@
         "flags": {
             "$id": "#/properties/flags",
             "type": "integer",
-            "enum": [1, 8]
+            "enum": [1, 8, 9, 0]
         },
         "iconUrl": {
             "$id": "#/properties/iconUrl",
